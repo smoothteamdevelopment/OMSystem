@@ -17,7 +17,9 @@ import com.esri.core.runtime.LicenseResult;
 import com.smooth.app.R;
 import com.smooth.app.adapter.ViewPagerAdapter;
 import com.smooth.app.slidingtab.SlidingTabLayout;
+import org.androidannotations.annotations.EActivity;
 
+@EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
 
     //Defining Variables
@@ -29,13 +31,12 @@ public class MainActivity extends AppCompatActivity {
     SlidingTabLayout tabs;
     CharSequence Titles[]={"Home","Events"};
     int Numboftabs =2;
-    private static final String CLIENT_ID = "fuMPMC61j43x4OMW";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LicenseResult licenseResult = ArcGISRuntime.setClientId(CLIENT_ID);
-        LicenseLevel licenseLevel = ArcGISRuntime.License.getLicenseLevel();
-        setContentView(R.layout.activity_main);
+
+//        setContentView(R.layout.activity_main);
         // Initializing Toolbar and setting it as the actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
