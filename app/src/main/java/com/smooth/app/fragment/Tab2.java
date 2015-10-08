@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.esri.android.map.MapView;
 import com.esri.android.map.ags.ArcGISTiledMapServiceLayer;
+import com.melnykov.fab.FloatingActionButton;
 import com.smooth.app.R;
 
 /**
@@ -24,6 +25,7 @@ import com.smooth.app.R;
 
 public class Tab2 extends Fragment {
     MapView mMapView;
+    FloatingActionButton fab;
 //    private final String mTiledServiceUrl = "http://192.168.10.206:6080/arcgis/rest/services/yjcmap/MapServer";
     private final String mTiledServiceUrl = "http://map.ncgl.tk/arcgis/rest/services/yjcmap/MapServer";
 
@@ -32,6 +34,8 @@ public class Tab2 extends Fragment {
         View v =inflater.inflate(R.layout.tab_1,container,false);
         mMapView=(MapView)v.findViewById(R.id.map);
         mMapView.addLayer(new ArcGISTiledMapServiceLayer(mTiledServiceUrl));
+        fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.setType(FloatingActionButton.TYPE_MINI);
         return v;
     }
 

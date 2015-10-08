@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import com.melnykov.fab.FloatingActionButton;
 import com.smooth.app.R;
 
 /**
@@ -21,10 +23,15 @@ import com.smooth.app.R;
 
 
 public class Tab1 extends Fragment {
-
+    ListView listView;
+    FloatingActionButton fab;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v =inflater.inflate(R.layout.tab_1,container,false);
+        View v =inflater.inflate(R.layout.tab_2,container,false);
+        listView = (ListView) v.findViewById(android.R.id.list);
+        fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.attachToListView(listView);
+        fab.setType(FloatingActionButton.TYPE_MINI);
         return v;
     }
 }

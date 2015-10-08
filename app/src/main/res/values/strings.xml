@@ -20,4 +20,5 @@
     <string name="login">登陆</string>
     <string name="basic_license_succeeded">地图许可初初始化成功</string>
     <string name="valid_client_id_required">地图许可初始化失败</string>
+
 </resources>

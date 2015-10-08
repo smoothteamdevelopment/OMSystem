@@ -11,6 +11,7 @@ package com.smooth.app.activity;
  *
  * @版本：V
  */
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -41,6 +42,7 @@ import org.androidannotations.annotations.rest.*;
  */
 @EActivity(R.layout.activity_login)
 public class LoginActivity extends Activity {
+    Context context;
     @ViewById(R.id.rl_user)
     RelativeLayout rl_user;
     @Bean
@@ -72,7 +74,7 @@ public class LoginActivity extends Activity {
 
     @UiThread
     void loginSueccess() {
-        Intent intent = new Intent(this.getApplicationContext(), MainActivity_.class);
+        Intent intent = new Intent(context, MainActivity_.class);
         startActivity(intent);
         finish();
     }
@@ -84,7 +86,7 @@ public class LoginActivity extends Activity {
      */
     @UiThread
     void showToast(String content) {
-        Toast.makeText(this.getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -94,9 +96,12 @@ public class LoginActivity extends Activity {
      */
     @UiThread(delay = 1000)
     void showToastDelay(String content) {
-        Toast.makeText(this.getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
     }
-
+    @AfterInject
+    void afterInject() {
+        this.context=this.getApplicationContext();
+    }
     @AfterViews
     void afterViews() {
         rl_user.startAnimation(login_anim);
