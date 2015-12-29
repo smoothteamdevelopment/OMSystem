@@ -54,7 +54,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity_" />
-        <activity android:name=".activity.MainActivity_" />
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.TestActivity_" />
         <service
                 android:name="com.yuntongxun.ecsdk.ECClientService"

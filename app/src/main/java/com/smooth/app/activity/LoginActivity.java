@@ -74,7 +74,7 @@ public class LoginActivity extends Activity {
 
     @UiThread
     void loginSueccess() {
-        Intent intent = new Intent(context, MainActivity_.class);
+        Intent intent = new Intent(context, MainActivity.class);
         startActivity(intent);
         finish();
     }

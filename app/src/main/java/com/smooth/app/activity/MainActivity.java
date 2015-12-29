@@ -14,12 +14,7 @@ import android.widget.Toast;
 import com.smooth.app.R;
 import com.smooth.app.adapter.ViewPagerAdapter;
 import com.smooth.app.slidingtab.SlidingTabLayout;
-import org.androidannotations.annotations.AfterInject;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
-import org.androidannotations.annotations.res.StringArrayRes;
 
-@EActivity()
 public class MainActivity extends AppCompatActivity {
 
     //Defining Variables
@@ -31,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
     SlidingTabLayout tabs;
     CharSequence Titles[]={"Home","Events"};
     int Numboftabs =2;
-    @AfterInject
-    void afterInject() {
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

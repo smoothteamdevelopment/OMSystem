@@ -17,7 +17,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
  *
  * @版本：V
  */
-@Rest(rootUrl = "http://qasmsoh.ahsmooth.tk", converters = {MappingJackson2HttpMessageConverter.class})
+@Rest(rootUrl = "http://www.qasmsoh.ml", converters = {MappingJackson2HttpMessageConverter.class})
 public interface UserService extends RestClientErrorHandling {
     @Post("/getUserInfo.action?id={userid}")
     @RequiresCookie("JSESSIONID")
